@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="Win2dCompositionTest.CanvasSwapChainTestWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    Title="CanvasSwapChainPanel (transparent, high-FPS)">
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+    <Grid>
+        <!--
+            A 1px top margin keeps the swap-chain visual from exactly covering the window edge,
+            which preserves backdrop (Mica/Acrylic) blending across resizes.
+        -->
+        <canvas:CanvasSwapChainPanel x:Name="SwapChainPanel" Margin="0,1,0,0" />
+    </Grid>
+</Window>

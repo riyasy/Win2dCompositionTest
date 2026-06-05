@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="Win2dCompositionTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Win2dCompositionTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Win2D Backdrop Test"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid Padding="20">
+        <StackPanel Spacing="20">
+            <TextBlock
+                FontSize="18"
+                FontWeight="Bold"
+                Text="Win2D Backdrop Test:" />
+
+            <StackPanel Spacing="8">
+                <TextBlock FontSize="14" Text="Animated using Win2D CanvasAnimatedControl" />
+                <Button Click="OnAnimatedCanvasClicked" Content="Open CanvasAnimatedControl Window" />
+            </StackPanel>
+            <StackPanel Spacing="8">
+                <TextBlock FontSize="14">
+                    <Run Text="Animated using Win2D CanvasControl" />
+                    <LineBreak />
+                    <Run Text="(driven by CompositionTarget.Rendering event)" />
+                </TextBlock>
+                <Button Click="OnRenderingCanvasClicked" Content="Open CanvasControl (Rendering) Window" />
+            </StackPanel>
+            <StackPanel Spacing="8">
+                <TextBlock FontSize="14">
+                    <Run Text="High-FPS + backdrop using CanvasSwapChainPanel" />
+                    <LineBreak />
+                    <Run Text="(own swap chain + render thread, transparent)" />
+                </TextBlock>
+                <Button Click="OnSwapChainCanvasClicked" Content="Open CanvasSwapChainPanel Window" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

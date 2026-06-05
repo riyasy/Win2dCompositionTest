@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Win2dCompositionTest (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Win2dCompositionTest (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
